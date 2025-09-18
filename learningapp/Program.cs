@@ -4,14 +4,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Configuration.AddAzureAppConfiguration(options =>
-{
-    options.Connect("Endpoint=https://learnappconfig.azconfig.io;Id=cbnO;Secret=FrCURbwVNzbZtePAkuBQdyZ1W5imFdGsxIyTJrYYxoQpJLYXEpnbJQQJ99BIAC1i4TkFv1zqAAABAZAC4byf");
-    options.UseFeatureFlags();
-});
-builder.Services.AddFeatureManagement();
-// .AddJsonFile("appsettings.json")
-//     .AddEnvironmentVariables();
+builder.Configuration
+// .AddAzureAppConfiguration(options =>
+// {
+//     options.Connect("Endpoint=https://learnappconfig.azconfig.io;Id=cbnO;Secret=FrCURbwVNzbZtePAkuBQdyZ1W5imFdGsxIyTJrYYxoQpJLYXEpnbJQQJ99BIAC1i4TkFv1zqAAABAZAC4byf");
+//     options.UseFeatureFlags();
+// });
+// builder.Services.AddFeatureManagement();
+    .AddJsonFile("appsettings.json")
+    .AddEnvironmentVariables();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
