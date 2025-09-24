@@ -20,6 +20,7 @@ public class IndexModel : PageModel
         // var config = _configuration.GetSection("Common:Settings");
         // string connectionString = config.GetValue<string>("dbpassword")!;
         string connectionString = _configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING")!;
+        Console.Write("ConnectionString---"+ connectionString);
         var sqlConnection = new SqlConnection(connectionString);
         sqlConnection.Open();
 
